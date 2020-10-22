@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Калькулятор</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header></header>
+
+<main>
+	<ul class="breadcrumb">
+		<li><a href="#">Главня /</a></li>
+		<li class="active"><a href="#"> Калькулятор экономии топлива и окупаемости</a></li>
+	</ul>
+	<h1>Калькулятор экономии топлива и окупаемости</h1>
+	<section class="calc">
+		<form action="">
+
+		<h2>Выберите модель:</h2>
+		<ul class="engineType">
+			<li id="2d" onclick="chooseEngine('2d',['4dm2','44d'])">
+				<img src="img/v1.png" alt="v1" width="100px" height="auto">
+				<p>Планар 2Д</p>
+			</li>
+
+			<li id="4dm2" onclick="chooseEngine('4dm2',['44d','2d'])">
+				<img src="img/v2.png" alt="v2" width="100px" height="auto">
+				<p>Планар 4ДМ2</p>
+			</li>
+
+			<li id="44d" onclick="chooseEngine('44d',['4dm2','2d'])">
+				<img src="img/v3.png" alt="v3" width="100px" height="auto">
+				<p>Планар 44Д</p>
+			</li>
+		</ul>
+
+		<h2>Укажите параметры:</h2>
+		<ul class="enter">
+			<li>
+		<label for="price">Цена дизельного топлева (руб/л)</label> <br>
+		<input type="number" id="price" placeholder="Введите цену за 1 литр" min="0" oninput="calculate()">
+		</li>
+			<li>
+		<label for="consumption">Расход на холостом ходу (л/час)</label> <br>
+		<input type="number" id="consumption" placeholder="Введите расход топлива" min="0" oninput="calculate()">
+		</li>
+			<li>
+		<label for="time">Время работы на холостом ходу (часов)</label> <br>
+		<input type="number" id="time" placeholder="Введите время работы двигателя" min="0" oninput="calculate()">
+		</li>
+		</ul>
+		</form>
+		<img src="img/result.png" alt="">
+		<h2 class="Title">Итого расход на обогрев кабины водителя</h2>
+		<ul class="result">
+			<li>
+				<h3>На холстом ходу</h3>
+				<ul class="res">
+					<li>
+						<img src="img/MoreFuel.png">
+						<p class="resultText" id="idleFuel">120.00 Л</p>
+					</li>
+					<li>
+						<img src="img/MoreMoney.png">
+						<p class="resultText" id="idlePrice">5 040.00 Р</p>
+					</li>
+				</ul>
+			</li>
+
+				<li>
+					<h3>С отопителем</h3>
+				<ul class="res">
+					<li>
+						<img src="img/fuel.png">
+						<p class="resultText" id="resFuel">3.50 Л</p>
+					</li>
+					<li>
+						<img src="img/Money.png">
+						<p class="resultText" id="resPrice">137.00 Р</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2 class="Title">Экономия и окупаемость</h2>
+		<h4>в случае использования отопителя</h4>
+		<img src="img/MeanMoney.png">
+		<p class="resultText" id="result">4 893.00 Р</p>
+	</section>
+</main>
+<footer></footer>
+<script src="js/script.js"></script>
+</body>
+</html>
